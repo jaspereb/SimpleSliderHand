@@ -21,10 +21,10 @@ Jasper Brown 2019
 */
 
 // Set these value to calibrate the gripper
-#define openPosition 9500
-#define closedPosition 800
-#define midPosition (closedPosition + 3000)
-#define lemonPosition closedPosition + 1100
+#define openPosition 800
+#define closedPosition 10500
+#define midPosition (closedPosition - 5000)
+#define lemonPosition closedPosition - 1400
 
 // Control Parameters
 #define start_speed 1023 //max 1023
@@ -57,7 +57,7 @@ void setup() {
   //Set initial parameters servo 1
   Dxl.writeWord(1,34, setTorque);
   Dxl.goalSpeed(1, setSpeed);
-  Dxl.goalPosition(1, setPos);
+  //Dxl.goalPosition(1, setPos);
   
   //Set to multi turn mode by defining the joint limits
   Dxl.writeWord(1,6, 4095);
@@ -166,7 +166,7 @@ void loop() {
   voltVal = analogRead(voltSensePin);  // read the input pin
   if(voltVal < 3000){
     SerialUSB.println("Power Lost!");
-    Dxl.goalPosition(1, closedPosition);
+    Dxl.goalPosition(1, openPosition);
     delay(100);
   }
 }

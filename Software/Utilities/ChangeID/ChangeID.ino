@@ -9,7 +9,7 @@ Jasper Brown 2017
 
 #define DXL_BUS_SERIAL3 3  //Dynamixel on Serial3(USART3)  <-OpenCM 485EXP
 
-int OldID = 13;
+int OldID = 14;
 int NewID = 1;
 
 Dynamixel Dxl(DXL_BUS_SERIAL3);
