@@ -1,0 +1,2 @@
+fclose(s);
+clear all;

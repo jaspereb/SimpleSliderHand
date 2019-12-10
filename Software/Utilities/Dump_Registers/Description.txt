@@ -1,0 +1,1 @@
+This utility can be used to easily print the contents of all the dynamixel registers for debugging.

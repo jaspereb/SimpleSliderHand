@@ -1,0 +1,1 @@
+This code can be used to easily check and change the ID for a dynamixel, only attach one at a time or they may conflict.

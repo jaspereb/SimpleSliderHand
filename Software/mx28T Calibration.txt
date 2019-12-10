@@ -1,0 +1,35 @@
+The goal of dynamixel calibration is to have the open and close positions be accurate. The startup position should be set to 'open' as well.
+
+To do this the settings in the hand software are defined.
+
+-Multi turn mode. This can be checked by setting the resolution divider and checking if this has an effect
+-Resolution divider = 1
+-ID = 1
+-Defaults, but can be changed:
+    -Torque = 500
+    -Speed = 1023
+    
+
+1. Detach hand tendons and drive dynamixel to zero position
+2. Ensure resolution divider is applied then drive to 500
+3. Move cars to closed position, attach tendons in direction that allows the 500 offset to be reduced in order to tighten them
+4. Attach opening tendons and remove slack from system
+5. Drive dynamixels to completely close gripper
+6. Record and set 'closed' position
+7. Drive dynamixels to fully open position
+8. Record and set 'open' position
+
+
+
+
+Absolute Encoder Testing:
+-Power cycling the board when the position is non zero has no effect
+-When the motor power was disconnected with the control board still powered, it altered the zero position
+-When it was moved while unpowered this had an effect
+-Repeated this again and it had no effect? 
+
+Notes:
+-Firmware v39 or above req for multi turn mode, don't look at the protocol 1.0 docs
+-Max 360d in normal mode, could be an issue
+-Need position sensing in wheel mode though?
+

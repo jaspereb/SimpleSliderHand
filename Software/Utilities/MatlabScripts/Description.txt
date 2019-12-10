@@ -1,0 +1,1 @@
+These scripts were used to control the openHand design from matlab. Most will not be relevant. The 'controlServo' script has examples of connecting to the servo and sending commands.

@@ -1,0 +1,1 @@
+This is the development code for the gripperSoftware. This contains some extra functions such as displaying ID numbers and self calibration. These never worked properly so we simplified down to the 'gripperSoftware'. 

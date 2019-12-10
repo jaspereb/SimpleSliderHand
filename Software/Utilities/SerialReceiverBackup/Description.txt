@@ -1,0 +1,1 @@
+This software is a very old version of 'gripperSoftware' that was originally used for development. Most of this will not be useful. 
