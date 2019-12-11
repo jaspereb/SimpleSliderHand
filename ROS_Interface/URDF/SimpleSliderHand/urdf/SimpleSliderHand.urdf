@@ -1,0 +1,43 @@
+<robot
+  name="SimpleSliderHand">
+  <link
+    name="GripperBase">
+    <inertial>
+      <origin
+        xyz="0.0036467 0.019172 0.046199"
+        rpy="0 0 0" />
+      <mass
+        value="0.29153" />
+      <inertia
+        ixx="0.00021964"
+        ixy="1.2606E-05"
+        ixz="4.3126E-05"
+        iyy="0.0011578"
+        iyz="1.1814E-06"
+        izz="0.0010164" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SimpleSliderHand/meshes/GripperBase.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SimpleSliderHand/meshes/GripperBase.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>
