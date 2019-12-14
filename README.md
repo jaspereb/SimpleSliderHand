@@ -1,6 +1,8 @@
 # SimpleSliderHand
 Designs and code for an open source simple parallel gripper, designed as part of PhD work at the Australian Center for Field Robotics
 
+![Gripper Rendering](https://github.com/jaspereb/SimpleSliderHand/HandRender.JPG "Simple Slider Hand")
+
 # What is this?
 This repo contains the solidworks designs, STL files, assembly instructions and code required to build a simple yet high performance parallel gripper. The intention of this design is to be accessible and low cost for educational and research applications. You should be able to construct this design in around 4 days for less than $500. 
 
