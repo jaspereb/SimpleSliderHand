@@ -28,7 +28,7 @@ You will also need access to:
 * A reasonable quality 3D printer
 * A soldering iron for adding heat set inserts
 
-Read the BuildInstructions.pdf document for more specific steps and tips.
+Read the BuildInstructions.pdf (still to come) document for more specific steps and tips.
 
 # The capacitor board
 Because we use the mx28T in multi turn mode there is an issue that it must be within the same 360degree rotation each time it is powered off. To ensure this, schematics are included for a capacitor power board so that the servo can be driven to the correct position when it loses power. 
@@ -42,6 +42,7 @@ Very basic firmware is provided in the 'Software' folder. This gets loaded onto 
 * 'c' for close
 * 'm' for mid position
 
+* 'd'xxxx for a width in mm
 * 'p'xxxx for a position
 * 's'xxxx for a speed
 * 't'xxxx for a torque
@@ -49,10 +50,10 @@ Very basic firmware is provided in the 'Software' folder. This gets loaded onto 
 See the GripperSoftware.ino code and mx28T eManual for more details 
 
 # ROS Integration
-In order to use this gripper with the Robot Operating System (ROS) a basic action service is provided. You will need to upload the gripper firmware then add the SimpleSliderHand folder under Software>ROSPackage to your catkin workspace. Ensure you rerun `catkin_make` and `source devel/setup.bash`. You should then be able to run 
+In order to use this gripper with the Robot Operating System (ROS) a basic action service is provided. You will need to upload the gripper firmware then add the parallel_gripper folder under Software>parallel_gripper to your catkin workspace. Ensure you rerun `catkin_make` and `source devel/setup.bash`. You should then be able to run 
 `rosrun SimpleSliderHand gripperServer.py`
 then
 `rosrun SimpleSliderHand gripperClient.py`
 and press enter to change the gripper state.
 
-In addition to the ROS action server. A URDF of the UR5 Robot with this gripper attached is also provided as an example for planning with the gripper on. 
+In addition to the ROS action server. A URDF of the UR5 Robot (currently just the gripper, this is a ToDo) with this gripper attached is also provided as an example for planning with the gripper on. 
