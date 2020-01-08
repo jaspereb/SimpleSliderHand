@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- The gripper server, name must match the action server name -->
+  <node pkg="parallel_gripper" type="gripperServer.py" name="gripper" output="screen"/>
+</launch>
+

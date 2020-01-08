@@ -1,0 +1,10 @@
+# Define the goal
+string actionType #Can be c-close, o-open, w-width in mm, t-set torque, s-set speed
+uint32 actionValue  #width in mm, torque/speed out of 1023
+---
+# Define the result
+uint32 finalForce #Value out of 2047
+int8 applyingForce #Boolean value if force is above a threshold
+---
+# Define a feedback message
+uint32 velocity
