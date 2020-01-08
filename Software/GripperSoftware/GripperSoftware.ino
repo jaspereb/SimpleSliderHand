@@ -26,6 +26,9 @@ Jasper Brown 2019
 #define midPosition (closedPosition - 5000)
 #define lemonPosition closedPosition - 1400
 
+#define openWidth 195 //Open width in mm
+#define closedWidth 20
+
 // Control Parameters
 #define start_speed 1023 //max 1023
 #define start_torque 1023 //max 1023
@@ -38,7 +41,10 @@ void parseString();
 // Global variables
 unsigned int setSpeed = start_speed;
 unsigned int setPos = openPosition;
+float setPosF = (float) setPos;
+unsigned int setWidth = openWidth;
 unsigned int setTorque = start_torque;
+float countsPerMM = (float)(closedPosition - openPosition) / (float)(openWidth - closedWidth);
 int voltSensePin = 0;
 int voltVal =0;
 
@@ -117,6 +123,20 @@ void parseString(){
   //Set Position
   else if((char)inString[0] == 'p'){
       setPos = parseUInt(inString, stringLength);
+      Dxl.goalPosition(1, setPos);
+  }
+  //Set width
+  else if ((char)inString[0] == 'd'){
+      setWidth = parseUInt(inString, stringLength);
+      if(setWidth < closedWidth){
+        setWidth = closedWidth;
+      }
+      if(setWidth > openWidth){
+        setWidth = openWidth;
+      }
+      //countsPerMM is from the open position to closed
+      setPosF = (closedPosition + 20*countsPerMM)-(countsPerMM*setWidth);
+      setPos = (unsigned int)setPosF;
       Dxl.goalPosition(1, setPos);
   }
   //Set Torque
