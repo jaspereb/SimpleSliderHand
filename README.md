@@ -16,7 +16,7 @@ Our gripper design mounts a Realsense D435 depth camera above it, a very common 
 This is not intended to be an off the shelf solution. Using very fine tendons without bearings will not support cycle limits in the thousands but we have not found any issues running this hundrends of times. There are many improvements that could be made to the design, but very few of these come without additional complexity or cost. It does take a bit of practice and tuning to get the tendon (fishing line) tension right, and there is still a small amount of backlash. It is possible to add tensioning springs but these tend to get broken if something goes wrong. If you require very precise (<3mm) positioning or torque control this is not a good solution. 
 
 # Where to start
-If you intend to actually construct this design start by looking through the bill of materials. The major components are:
+If you intend to actually construct this design start by reading the whole of BuildInstructions.pdf. The major components are:
 
 * mx28T dynamixel servomotor
 * 12mm linear rail and 2 carts
@@ -28,12 +28,10 @@ You will also need access to:
 * A reasonable quality 3D printer
 * A soldering iron for adding heat set inserts
 
-Read the BuildInstructions.pdf (still to come) document for more specific steps and tips.
-
 # The capacitor board
 Because we use the mx28T in multi turn mode there is an issue that it must be within the same 360degree rotation each time it is powered off. To ensure this, schematics are included for a capacitor power board so that the servo can be driven to the correct position when it loses power. 
 
-The addition of this board is optional but recommended. If you are powering the system from a UR controller with 24V we found X XXuF capacitors to be sufficient for a single gripper operation. 
+The addition of this board is optional but recommended. If you are powering the system from a UR controller with 24V we found 8 x 4700uF capacitors to be sufficient for a single gripper operation. 
 
 # The control interface
 Very basic firmware is provided in the 'Software' folder. This gets loaded onto the OpenCM9 controller (which is basically an arduino). This then listens for serial commands in the form of a letter and number. You will need to calibrate the servo position once the gripper is constructed in order to use this functionality. The most basic commands are:
